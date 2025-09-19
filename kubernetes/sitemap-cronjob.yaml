@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: sitemap-updater
+spec:
+  schedule: "0 0 * * *"  # Run daily at midnight UTC
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: sitemap-updater-sa
+          containers:
+          - name: sitemap-updater
+            image: bitnami/kubectl:latest
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - |
+              POD_NAME=$(kubectl get pods -l app=sokapulse -o jsonpath='{.items[0].metadata.name}')
+              if [ -z "$POD_NAME" ]; then
+                echo "Error: Could not find pod with label app=sokapulse"
+                exit 1
+              fi
+              echo "Found sokapulse pod: $POD_NAME"
+              kubectl exec $POD_NAME -- sh -c 'cd /app && node scripts/cron-update-sitemaps.js'
+            resources:
+              requests:
+                memory: "64Mi"
+                cpu: "50m"
+              limits:
+                memory: "128Mi"
+                cpu: "100m"
+          restartPolicy: OnFailure
+          # imagePullSecrets:
+          # - name: regcred 

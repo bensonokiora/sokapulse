@@ -1,0 +1,230 @@
+/* Payment Form Styles */
+
+/* Payment Options */
+.payment-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.payment-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+  border-color: #dc2626;
+}
+
+.payment-option.selected {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+  box-shadow: 0 8px 16px -4px rgba(220, 38, 38, 0.2);
+}
+
+/* Add selection indicator */
+.payment-option.selected::before {
+  content: '✓';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #dc2626;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.payment-icon {
+  max-width: 120px;
+  height: auto;
+  margin: 0 auto 1rem auto;
+  transition: transform 0.3s ease;
+}
+
+.payment-icon:hover {
+  transform: scale(1.05);
+}
+
+.limited-offer {
+  position: absolute;
+  top: 0.5rem;
+  right: -2rem;
+  transform: rotate(45deg);
+  background-color: #ef4444;
+  color: white;
+  padding: 0.25rem 2rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.payment-details-card {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.status-alert {
+  padding: 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.status-alert.info {
+  background-color: #eff6ff;
+  border-left: 4px solid #60a5fa;
+}
+
+.status-alert.success {
+  background-color: #f0fdf4;
+  border-left: 4px solid #4ade80;
+}
+
+.status-alert.error {
+  background-color: #fef2f2;
+  border-left: 4px solid #f87171;
+}
+
+.status-alert.warning {
+  background-color: #fffbeb;
+  border-left: 4px solid #fbbf24;
+}
+
+.timer-container {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.timer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #dc2626;
+}
+
+.copyable-field {
+  display: flex;
+  align-items: center;
+  background-color: #111827;
+  border: 1px solid #374151;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  color: #f9fafb;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copyable-field:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+}
+
+.copy-button {
+  background-color: #4b5563;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  background-color: #60a5fa;
+  transform: translateY(-1px);
+}
+
+/* Processing overlay */
+.processing-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 4px solid #dc2626;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Payment Form Modal */
+.payment-form-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.payment-form-container {
+  position: relative;
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 28rem;
+  margin: 2rem auto;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.payment-form-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-form-close {
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.payment-form-close:hover {
+  color: #fecaca;
+} 

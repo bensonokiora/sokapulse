@@ -1,0 +1,395 @@
+/* Match Details Modern UI Styles */
+
+/* Main match card container */
+.match-details-card {
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.match-details-card.mobile-view {
+  padding: 12px 8px;
+}
+
+[data-theme='dark'] .match-details-card {
+  background-color: #0f172a;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Teams container and row */
+.teams-container {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.teams-row {
+  display: none; /* Hide teams row on desktop */
+}
+
+/* Team column styling */
+.team-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Team name styling */
+.team-name-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 8px 0;
+  text-align: center;
+  width: 100%;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.team-name-header a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.team-name-header a:hover {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+[data-theme='dark'] .team-name-header a:hover {
+  color: #5b9eff;
+}
+
+/* Team logo styling */
+.team-logo-container {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.team-logo-container:hover {
+  transform: scale(1.05);
+}
+
+.team-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Form indicators */
+.form-indicators {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Match info column styling */
+.match-info-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 16px;
+}
+
+/* Match date and time styling */
+.match-datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 12px 16px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+[data-theme='dark'] .match-datetime {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.match-date {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+
+
+/* Venue styling */
+.match-venue {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-color);
+  opacity: 0.8;
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+/* Prediction badge styling */
+.prediction-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.prediction-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+/* League/Country info styling */
+.league-info-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+[data-theme='dark'] .league-info-bar {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.league-info-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.league-info-content a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.league-info-content a:hover {
+  color: #0d6efd;
+}
+
+[data-theme='dark'] .league-info-content a:hover {
+  color: #5b9eff;
+}
+
+.league-separator {
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+/* VS badge for mobile view */
+.vs-badge {
+  display: none;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  border-radius: 16px;
+  margin: 12px 0;
+}
+
+.vs-badge-mobile {
+  display: none; /* Hide VS badge on desktop */
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  border-radius: 16px;
+  margin: 0;
+  text-align: center;
+}
+
+[data-theme='dark'] .vs-badge {
+  background-color: #2a2e3d;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .vs-badge-mobile {
+  background-color: #2a2e3d;
+  color: #e0e0e0;
+}
+
+
+
+/* Match details card - unique mobile styles */
+.match-details-card-mobile {
+  padding: 4px 3px !important;
+  margin-bottom: 4px !important;
+  border-radius: 6px !important;
+}
+
+.match-details-teams-container-mobile {
+  gap: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+.match-details-info-column-mobile {
+  margin-bottom: 3px !important;
+  padding: 0 !important;
+}
+
+.match-details-teams-row-mobile {
+  padding: 0 3px !important;
+}
+
+.match-details-team-column-mobile {
+  width: 45% !important;
+}
+
+.match-details-team-logo-mobile {
+  width: 40px !important;
+  height: 40px !important;
+  margin-bottom: 2px !important;
+}
+
+.match-details-team-name-mobile {
+  font-size: 0.7rem !important;
+  margin: 1px 0 !important;
+  line-height: 1 !important;
+}
+
+.match-details-datetime-mobile {
+  max-width: 150px !important;
+  margin: 0 auto 3px auto !important;
+  padding: 2px 4px !important;
+}
+
+.match-details-date-mobile {
+  font-size: 0.65rem !important;
+}
+
+.match-details-time-mobile {
+  font-size: 0.8rem !important;
+}
+
+.match-details-venue-mobile {
+  font-size: 0.6rem !important;
+  margin-bottom: 3px !important;
+  max-width: 160px !important;
+}
+
+.match-details-prediction-mobile {
+  margin-top: 3px !important;
+  padding-top: 3px !important;
+}
+
+.match-details-prediction-label-mobile {
+  font-size: 0.6rem !important;
+  margin-bottom: 1px !important;
+}
+
+.match-details-form-indicators-mobile {
+  margin-top: 2px !important;
+  gap: 1px !important;
+}
+
+.match-details-form-indicator-mobile {
+  font-size: 0.6rem !important;
+  padding: 1px 2px !important;
+}
+
+.match-details-vs-badge-mobile {
+  font-size: 0.65rem !important;
+  padding: 1px 5px !important;
+  border-radius: 6px !important;
+}
+
+.match-details-league-bar-mobile {
+  padding: 3px 4px !important;
+  margin-top: 3px !important;
+}
+
+.match-details-league-content-mobile {
+  font-size: 0.6rem !important;
+  gap: 3px !important;
+}
+
+/* Match header unique styles */
+.match-details-header-row {
+  text-align: center !important;
+ 
+  margin-left: 1px !important;
+  border-radius: 5px !important;
+  cursor: auto !important;
+  padding: 6px 8px !important;
+  margin-bottom: 12px !important;
+}
+
+.match-details-header-cell {
+  padding: 0 !important;
+}
+
+.match-details-header-title {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  padding: 6px !important;
+  margin: 6px 0 !important;
+  line-height: 1.4 !important;
+}
+
+/* Mobile specific header styles */
+.match-details-header-row-mobile {
+  padding: 2px 4px !important;
+  margin-bottom: 6px !important;
+}
+
+.match-details-header-title-mobile {
+  font-size: 11px !important;
+  padding: 2px !important;
+  margin: 2px 0 !important;
+  line-height: 1.1 !important;
+} 
+
+/* Mobile view overrides */
+@media (max-width: 768px) {
+  /* Show mobile-specific elements */
+  .teams-row.match-details-teams-row-mobile {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  .vs-badge-mobile.match-details-vs-badge-mobile {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  
+  /* Adjust teams container for mobile */
+  .teams-container.match-details-teams-container-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+  }
+} 

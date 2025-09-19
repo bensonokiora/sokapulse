@@ -1,0 +1,79 @@
+@media (max-width: 991.98px) {
+  #searchBar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #343a40;
+    padding: 1rem;
+    z-index: 1030;
+  }
+
+  #searchBar .form-control {
+    width: 100% !important;
+  }
+
+  #searchBar form {
+    margin: 0 !important;
+  }
+
+  .search-container {
+    width: 100% !important;
+  }
+
+  #searchResultsForm {
+    width: 100% !important;
+    left: 0 !important;
+  }
+}
+
+@media (min-width: 992px) {
+  #searchBar {
+    justify-content: flex-end;
+  }
+  
+  #searchBar .form-control {
+    width: 250px;
+  }
+}
+.search-results-list .card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.search-results-list .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.search-results-list .card-title {
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.search-results-list .badge {
+  text-transform: capitalize;
+}
+
+.search-results-list a:hover {
+  text-decoration: none;
+}
+
+.search-results-list .card-body {
+  padding: 1rem;
+}
+
+.search-container .bi-search {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+}
+
+.search-container .search-input {
+  padding-left: 35px;
+  border-radius: 20px;
+}
+
+.search-container {
+  border-radius: 20px;
+}
+

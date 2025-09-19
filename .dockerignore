@@ -1,0 +1,30 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Git files
+.git
+.gitignore
+
+# Editor files
+.idea
+.vscode
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+LICENSE
+
+# Other
+.github
+kubernetes
+
+# Make sure important config files are included
+!.env.production
+!.npmrc
+!next.config.mjs 

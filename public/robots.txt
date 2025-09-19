@@ -1,0 +1,51 @@
+User-agent: *
+Allow: /
+
+# Disallow specific routes and patterns
+Disallow: /api/
+Disallow: /_next/
+Disallow: /error
+Disallow: /not-found
+Disallow: /maintenance
+Disallow: /football-predictions/ # Disallow the base predictions path
+
+# Explicitly allow Bing and other search engines 
+User-agent: bingbot
+Allow: /
+Crawl-delay: 1
+
+# Google Search Console and related bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: APIs-Google
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Allow specific important files
+Allow: /ads.txt
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://sokapulse.com/sitemap.xml 

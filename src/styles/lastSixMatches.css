@@ -1,0 +1,433 @@
+/* Modern Last Six Matches Styles */
+.lsm-modern-container {
+  background-color: var(--card-color, #fff);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.lsm-modern-title {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-color, #333);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lsm-modern-team-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 16px;
+  color: var(--text-color, #333);
+}
+
+.lsm-modern-teams-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.lsm-modern-team-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.lsm-modern-matches-container {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+[data-theme='dark'] .lsm-modern-matches-container {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.lsm-modern-matches-header {
+  display: flex;
+  padding: 12px 16px;
+  background-color: rgba(0, 0, 0, 0.04);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-color, #333);
+}
+
+[data-theme='dark'] .lsm-modern-matches-header {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.lsm-modern-matches-body {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.lsm-modern-match-row {
+  display: flex;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.lsm-modern-match-row:last-child {
+  border-bottom: none;
+}
+
+.lsm-modern-match-row:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme='dark'] .lsm-modern-match-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .lsm-modern-match-row:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.lsm-modern-match-cell {
+  flex: 1;
+  padding: 0 8px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  color: var(--text-color, #333);
+}
+
+.lsm-modern-date-cell {
+  flex: 0.8;
+  font-size: 12px;
+  color: #666;
+}
+
+[data-theme='dark'] .lsm-modern-date-cell {
+  color: #aaa;
+}
+
+.lsm-modern-team-cell {
+  flex: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lsm-modern-score-cell {
+  flex: 0.8;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.lsm-modern-league-cell {
+  flex: 0.7;
+  justify-content: flex-end;
+  font-size: 12px;
+  color: #666;
+}
+
+[data-theme='dark'] .lsm-modern-league-cell {
+  color: #aaa;
+}
+
+.lsm-modern-result-cell {
+  flex: 0.3;
+  justify-content: center;
+}
+
+.lsm-modern-team-link {
+  color: var(--text-color, #333);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lsm-modern-team-link:hover {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+[data-theme='dark'] .lsm-modern-team-link:hover {
+  color: #5b9eff;
+}
+
+.lsm-modern-team-link.highlighted {
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+[data-theme='dark'] .lsm-modern-team-link.highlighted {
+  color: #5b9eff;
+}
+
+.lsm-modern-match-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-color, #333);
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.lsm-modern-match-score:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: var(--text-color, #333);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .lsm-modern-match-score {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color, #eee);
+}
+
+[data-theme='dark'] .lsm-modern-match-score:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-color, #eee);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.lsm-modern-match-score-main {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  letter-spacing: 0.5px;
+}
+
+.lsm-modern-match-score-half {
+  font-size: 11px;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.lsm-modern-result-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.lsm-modern-result-badge.win {
+  background-color: #28a745;
+}
+
+.lsm-modern-result-badge.draw {
+  background-color: #ffb400;
+}
+
+.lsm-modern-result-badge.loss {
+  background-color: #dc3545;
+}
+
+.lsm-modern-load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.lsm-modern-load-more-button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lsm-modern-load-more-button:hover {
+  background-color: #0b5ed7;
+}
+
+[data-theme='dark'] .lsm-modern-load-more-button {
+  background-color: #5b9eff;
+}
+
+[data-theme='dark'] .lsm-modern-load-more-button:hover {
+  background-color: #4a8eff;
+}
+
+/* League filter tabs */
+.lsm-modern-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.lsm-modern-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.lsm-modern-tab {
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-color, #333);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+[data-theme='dark'] .lsm-modern-tab {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color, #eee);
+}
+
+.lsm-modern-tab:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+[data-theme='dark'] .lsm-modern-tab:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.lsm-modern-tab.active {
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .lsm-modern-tab.active {
+  background-color: #5b9eff;
+}
+
+/* Responsive styles for Last Six Matches */
+@media (max-width: 768px) {
+  .lsm-modern-container {
+    padding: 12px;
+  }
+  
+  .lsm-modern-title {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  
+  .lsm-modern-team-title {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .lsm-modern-teams-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .lsm-modern-team-section {
+    min-width: 100%;
+  }
+  
+  .lsm-modern-matches-header {
+    display: none;
+  }
+  
+  .lsm-modern-match-row {
+    position: relative;
+    padding: 8px 6px;
+    flex-wrap: wrap;
+    gap: 4px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  
+  .lsm-modern-match-cell {
+    font-size: 12px;
+  }
+  
+  .lsm-modern-date-cell {
+    grid-column: 1 / -1;
+    font-size: 11px;
+    color: #888;
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 4px;
+  }
+  
+  .lsm-modern-team-cell {
+    padding: 0 8px;
+    font-size: 11px;
+    min-width: 0;
+  }
+  
+  .lsm-modern-team-cell:first-of-type {
+    text-align: right;
+  }
+  
+  .lsm-modern-team-cell:last-of-type {
+    text-align: left;
+  }
+  
+  .lsm-modern-score-cell {
+    padding: 0 8px;
+    display: flex;
+    justify-content: center;
+    min-width: 70px;
+  }
+  
+  .lsm-modern-league-cell {
+    grid-column: 1 / 2;
+    font-size: 10px;
+    margin-top: 4px;
+  }
+  
+  .lsm-modern-result-cell {
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+  
+  .lsm-modern-match-score {
+    min-width: 65px;
+    padding: 3px 6px;
+  }
+  
+  .lsm-modern-match-score-main {
+    font-size: 11px;
+  }
+  
+  .lsm-modern-match-score-half {
+    font-size: 9px;
+  }
+  
+  .lsm-modern-result-badge {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  
+  .lsm-modern-tabs {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  
+  .lsm-modern-tab {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

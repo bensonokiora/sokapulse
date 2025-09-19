@@ -1,0 +1,445 @@
+/* SokaPulse PWA installation styles - With unique class names to avoid conflicts */
+#sokapulse-pwa-container {
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sokapulse-pwa-install-prompt {
+  position: static !important; /* Changed from fixed to static since container handles positioning */
+  background-color: #ffffff !important;
+  border-radius: 10px !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15) !important;
+  z-index: 999999 !important; /* Very high z-index to ensure visibility */
+  max-width: 90% !important;
+  width: 320px !important;
+  overflow: hidden !important;
+  display: none !important;
+  border: 1px solid #e0e0e0 !important;
+  opacity: 0 !important;
+  /* Separate transitions for better control */
+  transition: opacity 0.3s ease !important;
+  /* Ensure no other transforms are applied */
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: auto !important; /* Override container's none */
+}
+
+.sokapulse-pwa-install-prompt.show {
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Content wrapper for the prompt */
+.sokapulse-pwa-prompt-content {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px !important;
+  position: relative !important;
+  width: auto !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* App message */
+.sokapulse-pwa-prompt-message {
+  flex-grow: 1 !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  color: #333333 !important;
+  margin-right: 12px !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+}
+
+/* Button container */
+.sokapulse-pwa-prompt-actions {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Install button */
+.sokapulse-pwa-prompt-btn {
+  background-color: #2196F3 !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  transition: background-color 0.2s !important;
+  box-shadow: 0 2px 5px rgba(33, 150, 243, 0.3) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  text-transform: none !important;
+  line-height: 1.5 !important;
+  height: auto !important;
+  min-height: auto !important;
+  min-width: auto !important;
+  width: auto !important;
+  display: inline-block !important;
+}
+
+.sokapulse-pwa-prompt-btn:hover {
+  background-color: #1976D2 !important;
+}
+
+/* Close button */
+.sokapulse-pwa-prompt-close {
+  background: none !important;
+  border: none !important;
+  color: #757575 !important;
+  font-size: 22px !important;
+  cursor: pointer !important;
+  padding: 0 6px !important;
+  line-height: 1 !important;
+  margin-left: 6px !important;
+  transition: color 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+.sokapulse-pwa-prompt-close:hover {
+  color: #333 !important;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  #sokapulse-pwa-container {
+    bottom: 16px !important;
+  }
+  
+  .sokapulse-pwa-install-prompt {
+    width: calc(100% - 32px) !important;
+    border-radius: 8px !important;
+  }
+  
+  .sokapulse-pwa-prompt-content {
+    padding: 10px 12px !important;
+  }
+  
+  .sokapulse-pwa-prompt-message {
+    font-size: 14px !important;
+  }
+  
+  .sokapulse-pwa-prompt-btn {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* For the placeholder to prevent layout shifts */
+.sokapulse-pwa-placeholder {
+  display: block !important;
+  height: 0 !important;
+  width: 100% !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Alternative footer-style button */
+.sokapulse-pwa-install-footer-button {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  background-color: #2196F3 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 10px 20px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  z-index: 999998 !important; /* Just below the main prompt */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background-color 0.2s, transform 0.1s !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  margin: 0 !important;
+  text-transform: none !important;
+  line-height: 1.5 !important;
+}
+
+.sokapulse-pwa-install-footer-button:hover {
+  background-color: #1976D2 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.sokapulse-pwa-install-footer-button:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+@media (max-width: 768px) {
+  .sokapulse-pwa-install-footer-button {
+    bottom: 16px !important;
+    right: 16px !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Mobile bottom ad styles - FIXED to be above navigation */
+.mobile-bottom-ad {
+  display: none; /* Shown via media query */
+  position: fixed;
+  bottom: 0px; /* Kept above .mob-nav */
+  left: 0;
+  width: 100%;
+  /* height: 50px; Removed for dynamic content height */
+  background-image: linear-gradient(to right, rgb(10, 58, 62), rgb(0, 0, 0));
+  color: rgb(255, 255, 255);
+  /* text-align: center; Handled by inner flex */
+  z-index: 1000;
+  /* box-shadow: 0 -2px 5px rgba(0,0,0,0.1); Removed for new design */
+}
+/* .mobile-bottom-ad .adsbygoogle { Removed as structure changed }*/
+
+.mobile-bottom-ad .mobile-ad-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem; /* Smaller gap for mobile */
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.mobile-bottom-ad .mobile-ad-image {
+  object-fit: contain;
+  max-width: 40px; /* Slightly smaller for mobile proportions */
+  height: auto;
+}
+
+.mobile-bottom-ad .mobile-ad-text-content {
+  text-align: center;
+  flex: 1;
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+.mobile-bottom-ad .mobile-ad-primary-text {
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.75rem; /* text-xs */
+  line-height: 1.375; /* leading-snug */
+  white-space: normal; /* Explicitly allow wrapping */
+}
+
+.mobile-bottom-ad .mobile-ad-secondary-text {
+  display: none; /* Hidden on mobile (matches lg:inline behavior for larger screens) */
+}
+
+.mobile-bottom-ad .mobile-ad-register-button {
+  background-color: #ffb400;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem; /* py-1 px-3 */
+  text-align: center;
+  color: rgb(10, 58, 62);
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.mobile-bottom-ad .mobile-ad-register-button:hover {
+  background-color: rgb(10, 58, 62);
+  color: #fff;
+}
+
+.mobile-ad-close-btn {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1002;
+  padding: 0;
+}
+
+/* Add padding to the body to prevent content from being hidden behind elements */
+@media (max-width: 767px) { /* Max width for mobile styles */
+  .mob-nav {
+    display: flex;
+  }
+  .mobile-bottom-ad {
+    display: flex; /* Make the ad container visible and flex for the link */
+    /* align-items: center; /* Let the link handle alignment */
+    /* justify-content: center; /* Let the link handle justification */
+  }
+  body {
+    padding-bottom: 120px; /* Adjusted for .mob-nav and .mobile-bottom-ad height */
+                                     /* mob-nav ~50px, mobile-ad ~50-60px. Needs to be sum + buffer */
+  }
+  body.mobile-ad-closed {
+    padding-bottom: 60px;
+}
+}
+
+/* New Desktop Fixed Bottom Banner Styles */
+.desktop-fixed-bottom-banner {
+  display: none; /* Hidden by default, shown via media query */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50; /* Corresponds to Tailwind's z-50 */
+  background-image: linear-gradient(to right, rgb(10, 58, 62), rgb(0, 0, 0));
+  color: rgb(255, 255, 255);
+}
+
+.desktop-fixed-bottom-banner .desktop-ad-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem; /* Tailwind's gap-4 */
+  padding-top: 0.75rem; /* Tailwind's py-3 */
+  padding-bottom: 0.75rem; /* Tailwind's py-3 */
+  padding-left: 1rem; /* Tailwind's px-4 */
+  padding-right: 1rem; /* Tailwind's px-4 */
+  max-width: 1280px; /* Tailwind's max-w-screen-xl */
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: inherit;
+}
+
+.desktop-fixed-bottom-banner .desktop-ad-image {
+  object-fit: contain;
+  max-width: 50px; /* Default max-width */
+  height: auto;
+}
+
+.desktop-fixed-bottom-banner .desktop-ad-text-content {
+  text-align: center;
+  flex: 1;
+}
+
+.desktop-fixed-bottom-banner .desktop-ad-primary-text {
+  font-weight: 600; /* Tailwind's font-semibold */
+  color: #fff;
+  font-size: 0.75rem; /* Tailwind's text-xs */
+  line-height: 1.375; /* Tailwind's leading-snug */
+}
+
+.animate-bounce { /* General rule for any element with this class */
+  animation: bounce 1s infinite;
+}
+
+.desktop-fixed-bottom-banner .desktop-ad-secondary-text {
+  font-size: 0.75rem; /* Tailwind's text-xs */
+  color: rgba(255, 255, 255, 0.8); /* Tailwind's text-white/80 */
+  display: none; /* Tailwind's 'hidden', shown by lg media query */
+}
+
+.desktop-fixed-bottom-banner .desktop-ad-register-button {
+  background-color: #ffb400;
+  font-size: 0.75rem; /* Tailwind's text-xs */
+  font-weight: 600; /* Tailwind's font-semibold */
+  border-radius: 9999px; /* Tailwind's rounded-full */
+  padding: 0.25rem 1rem; /* Tailwind's px-4 py-1 */
+  text-align: center;
+  color: rgb(10, 58, 62);
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.desktop-fixed-bottom-banner .desktop-ad-register-button:hover {
+  background-color: rgb(10, 58, 62); /* Simulating hover:bg-secondary */
+  color: #fff; /* Simulating hover:text-white */
+}
+
+.desktop-ad-close-btn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 51;
+  padding: 0;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-0.35em); /* Using em for font-size relative bounce */
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+/* Media Queries for Ad Visibility and Responsive Styles */
+/* Using 768px as md breakpoint (Tailwind default) */
+@media (min-width: 768px) {
+  .desktop-fixed-bottom-banner {
+    display: block; /* Show desktop banner */
+  }
+  .desktop-fixed-bottom-banner .desktop-ad-link {
+    padding-left: 2.5rem; /* Tailwind's md:px-10 */
+    padding-right: 2.5rem; /* Tailwind's md:px-10 */
+  }
+  .desktop-fixed-bottom-banner .desktop-ad-image {
+    max-width: 120px; /* Tailwind's md:max-w-[120px] */
+    max-height: 100px;
+  }
+  .desktop-fixed-bottom-banner .desktop-ad-primary-text {
+    font-size: 1.125rem; /* Tailwind's md:text-lg */
+  }
+  .desktop-fixed-bottom-banner .desktop-ad-register-button {
+    font-size: 0.875rem; /* Tailwind's md:text-sm */
+    padding-top: 0.5rem; /* Tailwind's md:py-2 */
+    padding-bottom: 0.5rem; /* Tailwind's md:py-2 */
+  }
+
+  /* Hide original mobile ad on desktop */
+  .mobile-bottom-ad {
+    display: none !important; 
+  }
+}
+
+/* Using 1024px as lg breakpoint (Tailwind default) for secondary text visibility */
+@media (min-width: 1024px) {
+  .desktop-fixed-bottom-banner .desktop-ad-secondary-text {
+    display: inline; /* Tailwind's lg:inline */
+    font-size: 0.875rem; /* Tailwind's lg:text-sm */
+  }
+} 
