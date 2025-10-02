@@ -1,14 +1,9 @@
 import { Suspense } from 'react';
-import { fetchFixturesByDatePaginated } from '@/utils/api';
+import { fetchFixturesByDatePaginated } from '@/utils/api'; 
 import '../styles/custom.css';
-import '../styles/homepage.css';
 import SeoContent from '@/components/SeoContent';
 import OptimizedTitle from '@/components/OptimizedTitle';
 import FixturesList from '@/components/FixturesList';
-import HeroSection from '@/components/HeroSection';
-import JackpotCarousel from '@/components/JackpotCarousel';
-import SubscriptionPlans from '@/components/SubscriptionPlans';
-import LiveMatchesWidget from '@/components/LiveMatchesWidget';
 
 // Helper function remains the same
 const formatDate = (date) => {
@@ -63,50 +58,29 @@ export default async function Home() {
     }
   }
 
-  // Render the new homepage structure
+  // Render the page structure, passing initial data to the Client Component
   return (
-    <div className="homepage-wrapper">
+    <div className="compact-homepage">
       <Suspense fallback={<div></div>}>
-        {/* Hero Section - Full Width */}
-        <HeroSection />
-
-        {/* Main Content Grid */}
-        <div className="container">
-          <div className="row">
-            {/* Left Column - Main Content */}
-            <div className="col-lg-8 homepage-main-content">
-              {/* Jackpot Carousel */}
-              <JackpotCarousel />
-
-              {/* Subscription Plans */}
-              <SubscriptionPlans />
-
-              {/* Title Section */}
-              <div className="mb-3">
-                <OptimizedTitle title="Free Football Predictions" />
-              </div>
-
-              {/* Free Predictions Section */}
-              <div className="free-predictions-section">
-                <FixturesList
-                  initialFixtures={initialFixtures}
-                  initialNextCursor={initialNextCursor}
-                  perPage={perPage}
-                  initialDate={initialDate}
-                  initialError={initialError}
-                />
-              </div>
-
-              {/* SEO Content */}
-              <div id="seo-content-priority-wrapper" className="mt-4">
+        <div className="compact-title-section">
+          <OptimizedTitle title="Free Football Predictions, Tips & Statistics" />
+        </div>
+        
+        <div className="compact-content-container">
+          <div className="compact-main-content">
+              {/* FixturesList will handle NavigationRow, PredictionNav, Headers, Fixtures, Load More, Errors */}
+              <FixturesList
+                initialFixtures={initialFixtures}
+                initialNextCursor={initialNextCursor}
+                perPage={perPage}
+                initialDate={initialDate}
+                initialError={initialError}
+              />
+              
+              {/* SEO Content can remain here if static or moved to FixturesList if dynamic */}
+              <div id="seo-content-priority-wrapper" className="compact-seo-section">
                 <SeoContent />
               </div>
-            </div>
-
-            {/* Right Column - Sidebar */}
-            <div className="col-lg-4 homepage-sidebar d-none d-lg-block">
-              <LiveMatchesWidget />
-            </div>
           </div>
         </div>
       </Suspense>

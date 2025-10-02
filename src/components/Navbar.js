@@ -95,8 +95,37 @@ export default function Navbar() {
         </div>
 
         <SearchBar />
+
+        {/* Auth Buttons */}
+        <div className="auth-buttons d-none d-lg-flex">
+          <Link href="/premium-tips" className="btn-vip-tips">
+            VIP TIPS
+          </Link>
+          <Link href="/login" className="btn-sign-in">
+            SIGN IN
+          </Link>
+          <Link href="/register" className="btn-sign-up">
+            SIGN UP
+          </Link>
+        </div>
+
         <ThemeSwitch />
-        
+
+      </div>
+
+      {/* Mobile Auth Section */}
+      <div className="d-lg-none" style={{ background: 'var(--card-color)', borderTop: '1px solid var(--border-color)' }}>
+        <div className="container">
+          <div className="d-flex justify-content-center align-items-center py-2 gap-2">
+            <Link href="/login" className="auth-link" style={{ fontSize: '0.875rem' }}>
+              Login
+            </Link>
+            <span style={{ color: 'var(--text-secondary)' }}>|</span>
+            <Link href="/register" className="auth-link" style={{ fontSize: '0.875rem' }}>
+              Register
+            </Link>
+          </div>
+        </div>
       </div>
     </nav>
   );
