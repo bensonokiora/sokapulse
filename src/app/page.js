@@ -17,37 +17,30 @@ export default function Home() {
 
         {/* 2-Column Section: Jackpot + Live Matches */}
         <div className="homepage-top-section">
-          <div className="container-fluid px-3 px-lg-4">
-            <div className="row g-3">
-              {/* Left Column - Jackpot Carousel */}
-              <div className="col-lg-6 col-md-12">
-                <JackpotCarousel />
-              </div>
-
-              {/* Right Column - Live Matches Widget */}
-              <div className="col-lg-6 col-md-12">
-                <LiveMatchesWidget />
-              </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <JackpotCarousel />
+              <LiveMatchesWidget />
             </div>
           </div>
         </div>
 
         {/* Subscription Plans - Full Width */}
         <div className="homepage-plans-section">
-          <div className="container-fluid px-3 px-lg-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <SubscriptionPlans />
           </div>
         </div>
 
         {/* Free Predictions Section - Full Width */}
         <div className="homepage-predictions-section">
-          <div className="container-fluid px-3 px-lg-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <FreePredictionsSection />
           </div>
         </div>
 
         {/* SEO Content */}
-        <div className="container-fluid px-3 px-lg-4 mt-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div id="seo-content-priority-wrapper">
             <SeoContent />
           </div>

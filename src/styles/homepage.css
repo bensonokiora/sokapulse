@@ -979,26 +979,76 @@
    ============================================ */
 
 .homepage-top-section {
-  padding: 1.5rem 0;
   background: var(--bg-color);
 }
 
 .homepage-plans-section {
-  padding: 2rem 0;
-  background: var(--bg-color);
+  background: #f8f9fa;
+}
+
+[data-theme="dark"] .homepage-plans-section {
+  background: #1a1d29;
 }
 
 .homepage-predictions-section {
-  padding: 1.5rem 0;
   background: var(--bg-color);
 }
 
-@media (max-width: 991px) {
-  .homepage-top-section,
-  .homepage-plans-section,
-  .homepage-predictions-section {
-    padding: 1rem 0;
+/* Tailwind-style utility classes */
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+@media (min-width: 640px) {
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 /* ============================================
