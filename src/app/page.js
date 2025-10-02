@@ -1,112 +1,55 @@
 import { Suspense } from 'react';
-import { fetchFixturesByDatePaginated } from '@/utils/api';
 import '../styles/custom.css';
 import '../styles/homepage.css';
 import SeoContent from '@/components/SeoContent';
-import OptimizedTitle from '@/components/OptimizedTitle';
-import FixturesList from '@/components/FixturesList';
 import HeroSection from '@/components/HeroSection';
 import JackpotCarousel from '@/components/JackpotCarousel';
 import SubscriptionPlans from '@/components/SubscriptionPlans';
 import LiveMatchesWidget from '@/components/LiveMatchesWidget';
+import FreePredictionsSection from '@/components/FreePredictionsSection';
 
-// Helper function remains the same
-const formatDate = (date) => {
-  if (typeof date === 'string' && date.match(/^\d{4}-\d{2}-\d{2}$/)) {
-    return date;
-  }
-  const dateObj = new Date(date);
-  if (isNaN(dateObj.getTime())) {
-    const today = new Date();
-    return today.toISOString().split('T')[0];
-  }
-  const year = dateObj.getFullYear();
-  const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-  const day = String(dateObj.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
-};
-
-// Server Component to fetch initial data
-export default async function Home() {
-  const initialDate = new Date();
-  const formattedDate = formatDate(initialDate);
-  let initialFixtures = [];
-  let initialError = null;
-  let initialNextCursor = null;
-  const perPage = 20; // Define items per page
-
-  // Use fetchFixturesByDatePaginated for today's date
-  try {
-    console.log(`Fetching initial fixtures for date: ${formattedDate} with pagination`);
-    // Fetch initial page of fixtures
-    const apiResponse = await fetchFixturesByDatePaginated(formattedDate, perPage, '1');
-    console.log(`Initial fixtures paginated response status: ${apiResponse?.status}`); // Log API status
-
-    if (apiResponse.status === true && Array.isArray(apiResponse.fixtures)) {
-      initialFixtures = apiResponse.fixtures;
-      initialNextCursor = apiResponse.nextCursor;
-    } else {
-      console.error('API (paginated) returned non-success status or invalid data structure:', apiResponse);
-      initialError = apiResponse.message || 'Failed to load fixtures';
-    }
-  } catch (err) {
-    console.error("Error fetching initial fixtures:", err);
-    // Handle potential ECONNRESET or other fetch errors from fetchFixturesByDatePaginated
-    if (err.cause && err.cause.code === 'ECONNRESET') {
-      initialError = 'Connection reset while fetching fixtures (ECONNRESET).';
-    } else if (err.name === 'AbortError') {
-        initialError = `Fixture request timed out: ${err.message}`;
-    } else if (err.name === 'TypeError' && err.message.includes('fetch failed')) { // More specific check for fetch failure
-        initialError = `Network error fetching fixtures. Cause: ${err.cause ? err.cause.message : 'Unknown'}`;
-    } else {
-        initialError = `Error loading fixtures: ${err.message}`;
-    }
-  }
-
-  // Render the new homepage structure
+export default function Home() {
   return (
     <div className="homepage-wrapper">
       <Suspense fallback={<div></div>}>
         {/* Hero Section - Full Width */}
         <HeroSection />
 
-        {/* Main Content Grid */}
-        <div className="container">
-          <div className="row">
-            {/* Left Column - Main Content */}
-            <div className="col-lg-8 homepage-main-content">
-              {/* Jackpot Carousel */}
-              <JackpotCarousel />
-
-              {/* Subscription Plans */}
-              <SubscriptionPlans />
-
-              {/* Title Section */}
-              <div className="mb-3">
-                <OptimizedTitle title="Free Football Predictions" />
+        {/* 2-Column Section: Jackpot + Live Matches */}
+        <div className="homepage-top-section">
+          <div className="container-fluid px-3 px-lg-4">
+            <div className="row g-3">
+              {/* Left Column - Jackpot Carousel */}
+              <div className="col-lg-6 col-md-12">
+                <JackpotCarousel />
               </div>
 
-              {/* Free Predictions Section */}
-              <div className="free-predictions-section">
-                <FixturesList
-                  initialFixtures={initialFixtures}
-                  initialNextCursor={initialNextCursor}
-                  perPage={perPage}
-                  initialDate={initialDate}
-                  initialError={initialError}
-                />
-              </div>
-
-              {/* SEO Content */}
-              <div id="seo-content-priority-wrapper" className="mt-4">
-                <SeoContent />
+              {/* Right Column - Live Matches Widget */}
+              <div className="col-lg-6 col-md-12">
+                <LiveMatchesWidget />
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Right Column - Sidebar */}
-            <div className="col-lg-4 homepage-sidebar d-none d-lg-block">
-              <LiveMatchesWidget />
-            </div>
+        {/* Subscription Plans - Full Width */}
+        <div className="homepage-plans-section">
+          <div className="container-fluid px-3 px-lg-4">
+            <SubscriptionPlans />
+          </div>
+        </div>
+
+        {/* Free Predictions Section - Full Width */}
+        <div className="homepage-predictions-section">
+          <div className="container-fluid px-3 px-lg-4">
+            <FreePredictionsSection />
+          </div>
+        </div>
+
+        {/* SEO Content */}
+        <div className="container-fluid px-3 px-lg-4 mt-5">
+          <div id="seo-content-priority-wrapper">
+            <SeoContent />
           </div>
         </div>
       </Suspense>

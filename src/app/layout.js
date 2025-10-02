@@ -6,7 +6,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons fro
 import { ThemeProvider } from '@/context/ThemeContext';
 import { SidebarProvider } from '@/context/SidebarContext';
 import Script from 'next/script';
-import Sidebar from '../components/Sidebar';
+import LayoutWrapper from '../components/LayoutWrapper';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 // import Popup from '../components/Popup'; // Added import for Popup component
@@ -8467,14 +8467,9 @@ export default async function RootLayout({ children }) {
         <ThemeProvider>
           <SidebarProvider>
             <Navbar />
-            <div className="container container-mob" >
-              <div id="wrapper" className="d-flex">
-                <Sidebar />
-                <div id="page-content-wrapper">
-                  {children}
-                </div>
-              </div>
-            </div>
+            <LayoutWrapper>
+              {children}
+            </LayoutWrapper>
             {/* <div className="mobile-bottom-ad">
                 <a id="mobileAdLink" href="https://moy.auraodin.com/redirect.aspx?pid=139161&bid=1715" target="_blank" rel="noopener noreferrer" className="mobile-ad-link">
                     <img id="mobileAdImage" alt="22bet" loading="lazy" width="100" height="100" decoding="async" data-nimg="1" className="mobile-ad-image" src="/assets/images/22bet_wide.webp" srcSet="/assets/images/22bet_wide.webp"/>

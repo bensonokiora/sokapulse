@@ -975,6 +975,343 @@
 }
 
 /* ============================================
+   HOMEPAGE SECTIONS LAYOUT
+   ============================================ */
+
+.homepage-top-section {
+  padding: 1.5rem 0;
+  background: var(--bg-color);
+}
+
+.homepage-plans-section {
+  padding: 2rem 0;
+  background: var(--bg-color);
+}
+
+.homepage-predictions-section {
+  padding: 1.5rem 0;
+  background: var(--bg-color);
+}
+
+@media (max-width: 991px) {
+  .homepage-top-section,
+  .homepage-plans-section,
+  .homepage-predictions-section {
+    padding: 1rem 0;
+  }
+}
+
+/* ============================================
+   FREE PREDICTIONS SECTION
+   ============================================ */
+
+.free-predictions-section {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .free-predictions-section {
+  background: var(--card-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.predictions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+[data-theme="dark"] .predictions-header {
+  border-bottom-color: #374151;
+}
+
+.predictions-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.predictions-title-wrapper svg {
+  color: var(--text-color);
+}
+
+.predictions-title-wrapper h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.predictions-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.predictions-tab {
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.predictions-tab:hover {
+  background: #f3f4f6;
+}
+
+[data-theme="dark"] .predictions-tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.predictions-tab.active {
+  background: #10b981;
+  color: white;
+}
+
+.predictions-table-wrapper {
+  overflow-x: auto;
+}
+
+.predictions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.predictions-table thead {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+[data-theme="dark"] .predictions-table thead {
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom-color: #374151;
+}
+
+.predictions-table th {
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.predictions-table .col-index {
+  width: 40px;
+  text-align: center;
+}
+
+.predictions-table .col-teams {
+  width: auto;
+}
+
+.predictions-table .col-results {
+  width: 80px;
+  text-align: center;
+}
+
+.predictions-table .col-tip {
+  width: 60px;
+  text-align: center;
+}
+
+.predictions-table .col-league {
+  width: 80px;
+  text-align: center;
+}
+
+.prediction-row {
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .prediction-row {
+  border-bottom-color: #374151;
+}
+
+.prediction-row:hover {
+  background: #f9fafb;
+}
+
+[data-theme="dark"] .prediction-row:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.prediction-row td {
+  padding: 0.5rem 0.75rem;
+}
+
+.index-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .index-badge {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.teams-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.match-datetime {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 60px;
+}
+
+.match-date,
+.match-time {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.teams-names {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.team {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.home-team {
+  font-weight: 600;
+}
+
+.results-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.results-wrapper .score {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+.predictions-table .tip-badge {
+  background: #f59e0b;
+  color: white;
+  padding: 0.25rem 0.625rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: inline-block;
+  min-width: 35px;
+  text-align: center;
+}
+
+.league-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+}
+
+.league-flag {
+  font-size: 1rem;
+}
+
+.league-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.predictions-footer {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+}
+
+[data-theme="dark"] .predictions-footer {
+  border-top-color: #374151;
+}
+
+.view-all-predictions-btn {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  background: #f3f4f6;
+  color: var(--text-color);
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .view-all-predictions-btn {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.view-all-predictions-btn:hover {
+  background: #10b981;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .predictions-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .predictions-tabs {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .predictions-tab {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .teams-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .match-datetime {
+    min-width: auto;
+  }
+}
+
+/* ============================================
+   SUBSCRIPTION PLANS ADJUSTMENTS
+   ============================================ */
+
+.homepage-plans-section .subscription-plans {
+  padding: 0;
+}
+
+/* ============================================
    UTILITY CLASSES
    ============================================ */
 
