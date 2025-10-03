@@ -6,7 +6,7 @@ import HeroSection from '@/components/HeroSection';
 import JackpotCarousel from '@/components/JackpotCarousel';
 import SubscriptionPlans from '@/components/SubscriptionPlans';
 import LiveMatchesWidget from '@/components/LiveMatchesWidget';
-import FreePredictionsSection from '@/components/FreePredictionsSection';
+import FreeTipsAndWins from '@/components/Homepage/FreeTipsAndWins';
 
 export default function Home() {
   return (
@@ -32,10 +32,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Free Predictions Section - Full Width */}
-        <div className="homepage-predictions-section">
+        {/* Free Tips and VIP Wins Section - Full Width */}
+        <div className="homepage-tips-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <FreePredictionsSection />
+            <FreeTipsAndWins />
           </div>
         </div>
 

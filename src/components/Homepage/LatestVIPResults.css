@@ -1,0 +1,479 @@
+.vip-results-container {
+  margin: 2rem 0;
+}
+
+.vip-results-section {
+  background: var(--card-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .vip-results-section {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #10b981;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-title svg {
+  width: 24px;
+  height: 24px;
+}
+
+.vip-header {
+  color: #10b981;
+}
+
+.vip-title {
+  color: #10b981;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.vip-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-left: 2rem;
+}
+
+/* Table Styling */
+.vip-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.vip-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.vip-table thead {
+  background: #f9fafb;
+}
+
+[data-theme="dark"] .vip-table thead {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.vip-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.vip-table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.15s;
+}
+
+.vip-table tbody tr:hover {
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+[data-theme="dark"] .vip-table tbody tr:hover {
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.vip-table td {
+  padding: 1rem;
+  color: var(--text-color);
+}
+
+/* Match Number */
+.match-number {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  width: 50px;
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+/* Teams Cell */
+.teams-cell {
+  min-width: 250px;
+}
+
+.vip-match-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.vip-date {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  min-width: 80px;
+}
+
+.vip-status {
+  color: #10b981;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.vip-teams {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vip-team {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+}
+
+.team-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Results Cell */
+.results-cell {
+  text-align: center;
+  width: 80px;
+}
+
+.score {
+  padding: 0.25rem 0;
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+/* Tip Cell */
+.tip-cell {
+  text-align: center;
+  width: 100px;
+}
+
+.vip-tip-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #10b981;
+  color: white;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.vip-tip-badge.won {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* League Cell */
+.league-cell {
+  text-align: center;
+  width: 100px;
+}
+
+.league-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.league-abbr {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* VIP Footer */
+.vip-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+[data-theme="dark"] .vip-footer {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%);
+}
+
+.vip-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.stat-value.success {
+  color: #10b981;
+}
+
+.view-vip-btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.view-vip-btn:hover {
+  background: linear-gradient(90deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+  color: white;
+}
+
+/* Loading and Error States */
+.loading-state,
+.error-state,
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.error-state {
+  color: #ef4444;
+  opacity: 1;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+  .vip-footer {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .vip-stats {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .vip-results-container {
+    margin: 1rem 0;
+  }
+
+  .vip-results-section {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .section-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .header-title {
+    font-size: 1.1rem;
+  }
+
+  .header-title svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .vip-title {
+    font-size: 1.25rem;
+  }
+
+  .vip-subtitle {
+    font-size: 0.8rem;
+    margin-left: 1.5rem;
+  }
+
+  .vip-table {
+    font-size: 0.8rem;
+  }
+
+  .vip-table th {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .vip-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .teams-cell {
+    min-width: 180px;
+  }
+
+  .vip-match-info {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vip-date {
+    font-size: 0.7rem;
+    min-width: auto;
+  }
+
+  .vip-teams {
+    gap: 0.25rem;
+  }
+
+  .vip-team {
+    gap: 0.375rem;
+  }
+
+  .vip-team span {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .team-logo {
+    width: 16px;
+    height: 16px;
+  }
+
+  .results-cell {
+    width: 60px;
+  }
+
+  .score {
+    font-size: 0.95rem;
+  }
+
+  .tip-cell {
+    width: 80px;
+  }
+
+  .vip-tip-badge {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .league-cell {
+    width: 70px;
+  }
+
+  .league-abbr {
+    font-size: 0.75rem;
+  }
+
+  .match-number {
+    width: 40px;
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .vip-stats {
+    gap: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .view-vip-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+  .vip-results-section {
+    padding: 0.75rem;
+  }
+
+  .header-title {
+    font-size: 1rem;
+  }
+
+  .vip-title {
+    font-size: 1.1rem;
+  }
+
+  .vip-subtitle {
+    font-size: 0.75rem;
+    margin-left: 1rem;
+  }
+
+  .vip-table {
+    font-size: 0.75rem;
+  }
+
+  .vip-table th {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.65rem;
+  }
+
+  .vip-table td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .teams-cell {
+    min-width: 150px;
+  }
+
+  .vip-team span {
+    font-size: 0.7rem;
+  }
+
+  .vip-tip-badge {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .vip-footer {
+    padding: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.1rem;
+  }
+
+  .view-vip-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}

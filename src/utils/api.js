@@ -1080,3 +1080,41 @@ export async function createBetSlip(betSlipData) {
     throw error;
   }
 }
+
+// Fetch featured tipsters for homepage free tips
+export async function fetchFeaturedTipsters(date) {
+  const baseUrl =API_BASE ;
+  const fetchHeaders = isServer ? getHeaders() : { 'Content-Type': 'application/json', 'X-API-KEY': API_KEY };
+  const url = `${baseUrl}/enriched-bet-slips/featured-tipsters?date=${date}`;
+
+  try {
+    const response = await fetchWithTimeout(url, {
+      method: 'GET',
+      headers: fetchHeaders
+    });
+
+    return await response.json();
+  } catch (error) {
+    console.error(`Error fetching featured tipsters from ${url}:`, error);
+    throw error;
+  }
+}
+
+// Fetch premium tipsters for homepage VIP results
+export async function fetchPremiumTipsters(date) {
+  const baseUrl = API_BASE;
+  const fetchHeaders = isServer ? getHeaders() : { 'Content-Type': 'application/json', 'X-API-KEY': API_KEY };
+  const url = `${baseUrl}/enriched-bet-slips/premium-tipsters?date=${date}`;
+
+  try {
+    const response = await fetchWithTimeout(url, {
+      method: 'GET',
+      headers: fetchHeaders
+    });
+
+    return await response.json();
+  } catch (error) {
+    console.error(`Error fetching premium tipsters from ${url}:`, error);
+    throw error;
+  }
+}

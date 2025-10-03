@@ -1,0 +1,494 @@
+.free-tips-wins-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Section Styling */
+.tips-section,
+.vip-wins-section {
+  background: var(--card-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .tips-section,
+[data-theme="dark"] .vip-wins-section {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.header-title svg {
+  width: 24px;
+  height: 24px;
+}
+
+.vip-header {
+  color: #10b981;
+}
+
+.vip-title {
+  color: #10b981;
+  margin: 0;
+}
+
+/* Tabs Styling */
+.tabs-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+[data-theme="dark"] .tab-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+}
+
+.tab-button:hover {
+  background: #e5e7eb;
+}
+
+[data-theme="dark"] .tab-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tab-button.active {
+  background: #10b981;
+  color: white;
+}
+
+/* Table Styling */
+.tips-table-wrapper,
+.vip-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.tips-table,
+.vip-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tips-table thead,
+.vip-table thead {
+  background: #f9fafb;
+}
+
+[data-theme="dark"] .tips-table thead,
+[data-theme="dark"] .vip-table thead {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.tips-table th,
+.vip-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tips-table tbody tr,
+.vip-table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.15s;
+}
+
+.tips-table tbody tr:hover,
+.vip-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+[data-theme="dark"] .tips-table tbody tr:hover,
+[data-theme="dark"] .vip-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.tips-table td,
+.vip-table td {
+  padding: 1rem;
+  color: var(--text-color);
+}
+
+/* Match Number */
+.match-number {
+  background: #f3f4f6;
+  color: #6b7280;
+  font-weight: 600;
+  text-align: center;
+  width: 50px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .match-number {
+  background: rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+}
+
+/* Teams Cell */
+.teams-cell {
+  min-width: 250px;
+}
+
+.match-info,
+.vip-match-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.match-date,
+.vip-date {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  min-width: 80px;
+}
+
+.vip-status {
+  color: #10b981;
+  font-size: 0.75rem;
+}
+
+.teams,
+.vip-teams {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.team,
+.vip-team {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+}
+
+.team-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.team-logo-placeholder {
+  width: 20px;
+  height: 20px;
+  background: var(--border-color);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Results Cell */
+.results-cell {
+  text-align: center;
+  width: 80px;
+}
+
+.score {
+  padding: 0.25rem 0;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Tip Cell */
+.tip-cell {
+  text-align: center;
+  width: 100px;
+}
+
+.tip-badge,
+.vip-tip-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #fbbf24;
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.tip-badge.tip-1 {
+  background: #fbbf24;
+}
+
+.tip-badge.tip-2 {
+  background: #fb923c;
+}
+
+.tip-badge.tip-12,
+.tip-badge.tip-x2,
+.tip-badge.tip-1x {
+  background: #f59e0b;
+}
+
+.tip-badge.tip-over-1\.5,
+.tip-badge.tip-over-2\.5 {
+  background: #10b981;
+}
+
+.vip-tip-badge {
+  background: #10b981;
+}
+
+.vip-tip-badge.tip-ov25 {
+  background: #059669;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+/* League Cell */
+.league-cell {
+  text-align: center;
+  width: 100px;
+}
+
+.league-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.league-flag {
+  width: 24px;
+  height: 16px;
+  background: var(--border-color);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.league-abbr {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Loading and Error States */
+.loading-state,
+.error-state,
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.error-state {
+  color: #ef4444;
+  opacity: 1;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+  .free-tips-wins-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .free-tips-wins-container {
+    margin: 1rem 0;
+  }
+
+  .tips-section,
+  .vip-wins-section {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .section-header {
+    margin-bottom: 1rem;
+  }
+
+  .header-title {
+    font-size: 1.1rem;
+  }
+
+  .header-title svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tabs-container {
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .tab-button {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* Mobile Table Adjustments */
+  .tips-table,
+  .vip-table {
+    font-size: 0.8rem;
+  }
+
+  .tips-table th,
+  .vip-table th {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .tips-table td,
+  .vip-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .teams-cell {
+    min-width: 180px;
+  }
+
+  .match-info,
+  .vip-match-info {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .match-date,
+  .vip-date {
+    font-size: 0.7rem;
+    min-width: auto;
+  }
+
+  .teams,
+  .vip-teams {
+    gap: 0.25rem;
+  }
+
+  .team,
+  .vip-team {
+    gap: 0.375rem;
+  }
+
+  .team span,
+  .vip-team span {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .team-logo {
+    width: 16px;
+    height: 16px;
+  }
+
+  .results-cell {
+    width: 60px;
+  }
+
+  .score {
+    font-size: 0.85rem;
+  }
+
+  .tip-cell {
+    width: 80px;
+  }
+
+  .tip-badge,
+  .vip-tip-badge {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .league-cell {
+    width: 70px;
+  }
+
+  .league-abbr {
+    font-size: 0.75rem;
+  }
+
+  .league-flag {
+    width: 20px;
+    height: 14px;
+  }
+
+  .match-number {
+    width: 40px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+  .tips-section,
+  .vip-wins-section {
+    padding: 0.75rem;
+  }
+
+  .header-title {
+    font-size: 1rem;
+  }
+
+  .tab-button {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .tips-table,
+  .vip-table {
+    font-size: 0.75rem;
+  }
+
+  .tips-table th,
+  .vip-table th {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.65rem;
+  }
+
+  .tips-table td,
+  .vip-table td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .teams-cell {
+    min-width: 150px;
+  }
+
+  .team span,
+  .vip-team span {
+    font-size: 0.7rem;
+  }
+
+  .tip-badge,
+  .vip-tip-badge {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+}
