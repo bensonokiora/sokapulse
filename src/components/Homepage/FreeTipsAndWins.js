@@ -253,7 +253,7 @@ const FreeTipsAndWins = () => {
                             <div className="score">{tip.finalAwayScore ?? '-'}</div>
                           </>
                         ) : tip.actualMatchStatusShort === 'NS' ? (
-                          <span className="match-status-badge status-not-started">Not Started</span>
+                          <span className="match-status-badge status-not-started">-</span>
                         ) : (
                           <span className="match-status-badge status-live">{tip.actualMatchStatusShort}</span>
                         )}

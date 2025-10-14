@@ -177,7 +177,7 @@ export default function YesterdayFreeTips() {
                     <span className="score-away">{match.finalAwayScore ?? '-'}</span>
                   </div>
                 ) : match.actualMatchStatusShort === 'NS' ? (
-                  <span className="match-status-badge status-not-started">Not Started</span>
+                  <span className="match-status-badge status-not-started">-</span>
                 ) : (
                   <span className="match-status-badge status-live">{match.actualMatchStatusShort}</span>
                 )}
