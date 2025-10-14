@@ -678,7 +678,7 @@
 
 .table-header {
   display: grid;
-  grid-template-columns: 2fr 0.7fr 0.6fr 0.7fr;
+  grid-template-columns: 2fr 0.7fr 0.6fr;
   gap: 0.5rem;
   padding: 0.875rem 1rem;
   background: #f9fafb;
@@ -701,7 +701,7 @@
 
 .match-row {
   display: grid;
-  grid-template-columns: 2fr 0.7fr 0.6fr 0.7fr;
+  grid-template-columns: 2fr 0.7fr 0.6fr;
   gap: 0.5rem;
   padding: 0.875rem 1rem;
   border-bottom: 1px solid #e5e7eb;
@@ -789,12 +789,20 @@
 }
 
 .tip-badge {
-  background: #10b981;
+  background: #6b7280;
   color: white;
   padding: 0.25rem 0.625rem;
   border-radius: 6px;
   font-weight: 700;
   font-size: 0.75rem;
+}
+
+.tip-badge.won {
+  background: #10b981;
+}
+
+.tip-badge.lost {
+  background: #ef4444;
 }
 
 .col-league {
