@@ -142,16 +142,16 @@
 }
 
 .jackpot-card {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  border-radius: 16px;
+  background: linear-gradient(135deg, #1a2332 0%, #2d3748 100%);
+  border-radius: 20px;
   padding: 2rem;
   color: white;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
 [data-theme="dark"] .jackpot-card {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1e293b 100%);
 }
 
 .jackpot-header {
@@ -179,38 +179,41 @@
 }
 
 .jackpot-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   margin-bottom: 2rem;
 }
 
 .jackpot-stat {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .stat-label {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
 }
 
 .stat-value {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: white;
 }
 
 .stat-value svg {
   flex-shrink: 0;
+  width: 18px;
+  height: 18px;
 }
 
 .stat-value.stake {
-  color: #fbbf24;
+  color: #fb923c;
 }
 
 .jackpot-pricing {
@@ -221,25 +224,32 @@
 }
 
 .pricing-option {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 1rem;
+  background: rgba(71, 85, 105, 0.4);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.pricing-option:hover {
+  background: rgba(71, 85, 105, 0.6);
+  border-color: rgba(100, 116, 139, 0.5);
 }
 
 .pricing-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .pricing-value {
-  font-size: 1.5rem;
+  font-size: 1.625rem;
   font-weight: 700;
   color: white;
 }
@@ -250,10 +260,10 @@
   text-align: center;
   background: white;
   color: #1e293b;
-  padding: 1rem;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1rem;
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.975rem;
   text-decoration: none;
   transition: all 0.3s ease;
   margin-bottom: 1.5rem;
@@ -261,7 +271,7 @@
 
 .jackpot-cta:hover {
   background: #f1f5f9;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
   color: #1e293b;
 }
@@ -270,6 +280,7 @@
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+  align-items: center;
 }
 
 .indicator {
@@ -279,6 +290,10 @@
   background: rgba(255, 255, 255, 0.3);
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .indicator.active {
@@ -293,16 +308,27 @@
   }
 
   .jackpot-name {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .jackpot-info {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.625rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  .stat-value {
+    font-size: 1rem;
   }
 
   .jackpot-pricing {
-    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .pricing-value {
+    font-size: 1.375rem;
   }
 }
 
@@ -370,8 +396,8 @@
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -379,7 +405,7 @@
   background: white;
   border: 2px solid #e5e7eb;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.5rem 1.25rem;
   text-align: center;
   position: relative;
   transition: all 0.3s ease;
@@ -418,52 +444,57 @@
 }
 
 .card-icon {
-  margin-bottom: 1rem;
+  margin-bottom: 0.625rem;
+}
+
+.card-icon svg {
+  width: 42px;
+  height: 42px;
 }
 
 .card-name {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   text-transform: uppercase;
 }
 
 .card-price {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.375rem;
 }
 
 .price-currency {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--text-secondary);
 }
 
 .price-amount {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 800;
   color: var(--text-color);
 }
 
 .card-duration {
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   font-size: 0.875rem;
 }
 
 .card-features {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   text-align: left;
 }
 
 .feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  gap: 0.625rem;
+  margin-bottom: 0.625rem;
   color: var(--text-secondary);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
 }
 
 .feature-item svg {
@@ -490,12 +521,13 @@
 .card-cta {
   display: block;
   width: 100%;
-  padding: 0.875rem;
+  padding: 0.75rem;
   border-radius: 10px;
   font-weight: 700;
+  font-size: 0.875rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .card-cta.green {
@@ -526,8 +558,8 @@
 .mpesa-details {
   background: #f9fafb;
   border-radius: 8px;
-  padding: 1rem;
-  font-size: 0.75rem;
+  padding: 0.75rem;
+  font-size: 0.7rem;
   text-align: left;
 }
 
@@ -538,10 +570,11 @@
 .mpesa-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.375rem;
   font-weight: 700;
+  font-size: 0.7rem;
   color: #f97316;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.375rem;
 }
 
 .mpesa-info {
@@ -581,11 +614,16 @@
 @media (max-width: 768px) {
   .pricing-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.875rem;
   }
 
   .pricing-card {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .card-icon svg {
+    width: 36px;
+    height: 36px;
   }
 
   .card-name {
@@ -594,6 +632,12 @@
 
   .price-amount {
     font-size: 2rem;
+  }
+
+  .feature-item {
+    font-size: 0.8rem;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .plans-tabs {
