@@ -5,7 +5,7 @@ import SeoContent from '@/components/SeoContent';
 import HeroSection from '@/components/HeroSection';
 import JackpotCarousel from '@/components/JackpotCarousel';
 import SubscriptionPlans from '@/components/SubscriptionPlans';
-import LiveMatchesWidget from '@/components/LiveMatchesWidget';
+import YesterdayFreeTips from '@/components/YesterdayFreeTips';
 import FreeTipsAndWins from '@/components/Homepage/FreeTipsAndWins';
 
 export default function Home() {
@@ -15,12 +15,12 @@ export default function Home() {
         {/* Hero Section - Full Width */}
         <HeroSection />
 
-        {/* 2-Column Section: Jackpot + Live Matches */}
+        {/* 2-Column Section: Jackpot + Yesterday's Free Tips */}
         <div className="homepage-top-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <JackpotCarousel />
-              <LiveMatchesWidget />
+              <YesterdayFreeTips />
             </div>
           </div>
         </div>
