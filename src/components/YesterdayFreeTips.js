@@ -7,6 +7,34 @@ export default function YesterdayFreeTips() {
   const [matches, setMatches] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Function to shorten odd descriptions
+  const shortenOddDescription = (oddDesc) => {
+    if (!oddDesc) return oddDesc;
+
+    // Handle Over/Under patterns
+    const overMatch = oddDesc.match(/Over\s+(\d+\.?\d*)/i);
+    if (overMatch) {
+      return `OV${overMatch[1].replace('.', '')}`;
+    }
+
+    const underMatch = oddDesc.match(/Under\s+(\d+\.?\d*)/i);
+    if (underMatch) {
+      return `UN${underMatch[1].replace('.', '')}`;
+    }
+
+    // Handle GG/NG
+    if (oddDesc.match(/Both.*Score.*Yes/i) || oddDesc.match(/^GG$/i)) return 'GG';
+    if (oddDesc.match(/Both.*Score.*No/i) || oddDesc.match(/^NG$/i)) return 'NG';
+
+    // Handle Home/Away/Draw
+    if (oddDesc === '1' || oddDesc.toLowerCase() === 'home') return '1';
+    if (oddDesc === 'X' || oddDesc.toLowerCase() === 'draw') return 'X';
+    if (oddDesc === '2' || oddDesc.toLowerCase() === 'away') return '2';
+
+    // Return original if no pattern matches
+    return oddDesc;
+  };
+
   useEffect(() => {
     const fetchMatches = async () => {
       try {
@@ -143,15 +171,25 @@ export default function YesterdayFreeTips() {
               </div>
 
               <div className="col-results">
-                <div className="score">
-                  <span className="score-home">{match.finalHomeScore ?? '-'}</span>
-                  <span className="score-away">{match.finalAwayScore ?? '-'}</span>
-                </div>
+                {match.actualMatchStatusShort === 'FT' ? (
+                  <div className="score">
+                    <span className="score-home">{match.finalHomeScore ?? '-'}</span>
+                    <span className="score-away">{match.finalAwayScore ?? '-'}</span>
+                  </div>
+                ) : match.actualMatchStatusShort === 'NS' ? (
+                  <span className="match-status-badge status-not-started">Not Started</span>
+                ) : (
+                  <span className="match-status-badge status-live">{match.actualMatchStatusShort}</span>
+                )}
               </div>
 
               <div className="col-tip">
-                <span className={`tip-badge ${match.selectionOutcome === 'WON' ? 'won' : match.selectionOutcome === 'LOST' ? 'lost' : ''}`}>
-                  {match.oddDescription}
+                <span className={`tip-badge ${
+                  match.selectionOutcome === 'WON' ? 'tip-won' :
+                  match.selectionOutcome === 'LOST' ? 'tip-lost' :
+                  'tip-pending'
+                }`}>
+                  {shortenOddDescription(match.oddDescription)}
                 </span>
               </div>
             </div>

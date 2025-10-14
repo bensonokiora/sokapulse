@@ -221,6 +221,46 @@
   color: var(--text-color);
 }
 
+/* Match Status Badges */
+.match-status-badge {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-not-started {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+[data-theme="dark"] .status-not-started {
+  background: rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+}
+
+.status-live {
+  background: #fef3c7;
+  color: #f59e0b;
+  animation: pulse 2s infinite;
+}
+
+[data-theme="dark"] .status-live {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
 /* Tip Cell */
 .tip-cell {
   text-align: center;
@@ -231,13 +271,31 @@
 .vip-tip-badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: #fbbf24;
+  background: #6b7280;
   color: white;
   border-radius: 20px;
   font-weight: 600;
   font-size: 0.85rem;
 }
 
+/* Outcome-based styling */
+.tip-badge.tip-won,
+.vip-tip-badge.tip-won {
+  background: #10b981;
+  color: white;
+}
+
+.tip-badge.tip-lost {
+  background: #ef4444;
+  color: white;
+}
+
+.tip-badge.tip-pending {
+  background: #fbbf24;
+  color: white;
+}
+
+/* Legacy class support */
 .tip-badge.tip-1 {
   background: #fbbf24;
 }
@@ -255,16 +313,6 @@
 .tip-badge.tip-over-1\.5,
 .tip-badge.tip-over-2\.5 {
   background: #10b981;
-}
-
-.vip-tip-badge {
-  background: #10b981;
-}
-
-.vip-tip-badge.tip-ov25 {
-  background: #059669;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.8rem;
 }
 
 /* League Cell */

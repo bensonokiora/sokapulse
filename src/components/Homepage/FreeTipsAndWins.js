@@ -19,6 +19,34 @@ const FreeTipsAndWins = () => {
     return date.toISOString().split('T')[0];
   };
 
+  // Function to shorten odd descriptions
+  const shortenOddDescription = (oddDesc) => {
+    if (!oddDesc) return oddDesc;
+
+    // Handle Over/Under patterns
+    const overMatch = oddDesc.match(/Over\s+(\d+\.?\d*)/i);
+    if (overMatch) {
+      return `OV${overMatch[1].replace('.', '')}`;
+    }
+
+    const underMatch = oddDesc.match(/Under\s+(\d+\.?\d*)/i);
+    if (underMatch) {
+      return `UN${underMatch[1].replace('.', '')}`;
+    }
+
+    // Handle GG/NG
+    if (oddDesc.match(/Both.*Score.*Yes/i) || oddDesc.match(/^GG$/i)) return 'GG';
+    if (oddDesc.match(/Both.*Score.*No/i) || oddDesc.match(/^NG$/i)) return 'NG';
+
+    // Handle Home/Away/Draw
+    if (oddDesc === '1' || oddDesc.toLowerCase() === 'home') return '1';
+    if (oddDesc === 'X' || oddDesc.toLowerCase() === 'draw') return 'X';
+    if (oddDesc === '2' || oddDesc.toLowerCase() === 'away') return '2';
+
+    // Return original if no pattern matches
+    return oddDesc;
+  };
+
   // Fetch tips based on active tab
   useEffect(() => {
     const fetchTips = async () => {
@@ -219,12 +247,24 @@ const FreeTipsAndWins = () => {
                         </div>
                       </td>
                       <td className="results-cell">
-                        <div className="score">{tip.finalHomeScore ?? '-'}</div>
-                        <div className="score">{tip.finalAwayScore ?? '-'}</div>
+                        {tip.actualMatchStatusShort === 'FT' ? (
+                          <>
+                            <div className="score">{tip.finalHomeScore ?? '-'}</div>
+                            <div className="score">{tip.finalAwayScore ?? '-'}</div>
+                          </>
+                        ) : tip.actualMatchStatusShort === 'NS' ? (
+                          <span className="match-status-badge status-not-started">Not Started</span>
+                        ) : (
+                          <span className="match-status-badge status-live">{tip.actualMatchStatusShort}</span>
+                        )}
                       </td>
                       <td className="tip-cell">
-                        <span className={`tip-badge tip-${tip.oddDescription?.toLowerCase().replace(/\s+/g, '-')}`}>
-                          {tip.oddDescription}
+                        <span className={`tip-badge ${
+                          tip.selectionOutcome === 'WON' ? 'tip-won' :
+                          tip.selectionOutcome === 'LOST' ? 'tip-lost' :
+                          'tip-pending'
+                        }`}>
+                          {shortenOddDescription(tip.oddDescription)}
                         </span>
                       </td>
                       <td className="league-cell">
@@ -327,8 +367,8 @@ const FreeTipsAndWins = () => {
                         <div className="score">{win.finalAwayScore ?? '-'}</div>
                       </td>
                       <td className="tip-cell">
-                        <span className="vip-tip-badge won">
-                          {win.oddDescription}
+                        <span className="vip-tip-badge tip-won">
+                          {shortenOddDescription(win.oddDescription)}
                         </span>
                       </td>
                       <td className="league-cell">
