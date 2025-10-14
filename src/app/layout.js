@@ -1,5 +1,6 @@
 import '../styles/bootstrap-custom.css'; // Replace the full Bootstrap import
 import '../styles/globals.css';
+import '../styles/navbar.css';
 import '../styles/search.css';
 import '../styles/footer.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons from local package
