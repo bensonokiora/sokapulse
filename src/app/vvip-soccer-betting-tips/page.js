@@ -5,6 +5,7 @@ import VIPKickoffTime from '@/components/VIPKickoffTime';
 import VIPPredictionTips from '@/components/VIPPredictionTips';
 import PaymentInstructions from '@/components/PaymentInstructions';
 import FreeTipsAndWins from '@/components/Homepage/FreeTipsAndWins';
+import PremiumBetSlips from '@/components/PremiumBetSlips';
 import '../../styles/custom.css';
 import '../../styles/homepage.css';
 
@@ -65,6 +66,11 @@ export default function VVIPPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <SubscriptionPlans defaultTab="vvip" />
           </div>
+        </div>
+
+        {/* Premium Bet Slips Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <PremiumBetSlips isLocked={true} />
         </div>
       </Suspense>
     </div>
