@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { fetchFeaturedTipsters } from '@/utils/api';
 
 export default function YesterdayFreeTips() {
   const [matches, setMatches] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const tableBodyRef = useRef(null);
 
   // Function to shorten odd descriptions
   const shortenOddDescription = (oddDesc) => {
@@ -76,6 +77,7 @@ export default function YesterdayFreeTips() {
     fetchMatches();
   }, []);
 
+
   if (isLoading) {
     return (
       <div className="live-matches-widget">
@@ -129,7 +131,7 @@ export default function YesterdayFreeTips() {
           <span className="col-tip">Tip</span>
         </div>
 
-        <div className="table-body">
+        <div className="table-body" ref={tableBodyRef}>
           {matches.map((match, index) => (
             <div key={index} className="match-row">
               <div className="col-teams">

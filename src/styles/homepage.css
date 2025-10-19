@@ -140,6 +140,15 @@
 
 .jackpot-carousel {
   margin-bottom: 2rem;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1023px) {
+  .jackpot-carousel {
+    height: auto;
+  }
 }
 
 .jackpot-carousel.loading {
@@ -669,6 +678,15 @@
   overflow: hidden;
   position: sticky;
   top: 20px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1023px) {
+  .live-matches-widget {
+    height: auto;
+  }
 }
 
 [data-theme="dark"] .live-matches-widget {
@@ -726,6 +744,9 @@
 
 .matches-table {
   overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .table-header {
@@ -747,8 +768,9 @@
 }
 
 .table-body {
-  max-height: 600px;
+  flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .match-row {
