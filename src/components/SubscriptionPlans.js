@@ -148,8 +148,8 @@ const pricingPlans = {
   ]
 };
 
-export default function SubscriptionPlans() {
-  const [activeTab, setActiveTab] = useState('vip');
+export default function SubscriptionPlans({ defaultTab = 'vip' }) {
+  const [activeTab, setActiveTab] = useState(defaultTab);
 
   const currentPlans = pricingPlans[activeTab];
 

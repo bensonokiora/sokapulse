@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchFeaturedTipsters, fetchPremiumTipsters } from '@/utils/api';
 import './FreeTipsAndWins.css';
 
-const FreeTipsAndWins = () => {
+const FreeTipsAndWins = ({ showOnlyVIPWins = false }) => {
   const [activeFreeTipTab, setActiveFreeTipTab] = useState('today');
   const [freeTips, setFreeTips] = useState([]);
   const [vipWins, setVipWins] = useState([]);
@@ -142,6 +142,114 @@ const FreeTipsAndWins = () => {
 
     fetchVipWins();
   }, []); // Only fetch once on mount
+
+  // When showing only VIP wins, don't wrap in grid container
+  if (showOnlyVIPWins) {
+    return (
+      <div className="vip-wins-section">
+        <div className="section-header">
+          <div className="header-title vip-header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            <h2 className="vip-title">Latest VIP Wins</h2>
+          </div>
+        </div>
+
+        <div className="vip-table-wrapper">
+          {vipLoading ? (
+            <div className="loading-state">Loading VIP wins...</div>
+          ) : vipError ? (
+            <div className="error-state">{vipError}</div>
+          ) : (
+            <table className="vip-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Teams</th>
+                  <th>Results</th>
+                  <th>Tip</th>
+                  <th>Odds</th>
+                </tr>
+              </thead>
+              <tbody>
+                {vipWins.length > 0 ? (
+                  vipWins.map((win, index) => (
+                    <tr key={index}>
+                      <td className="match-number">{index + 1}</td>
+                      <td className="teams-cell">
+                        <div className="vip-match-info">
+                          <div className="vip-date">
+                            {new Date(win.matchDate + ' ' + win.matchTime).toLocaleDateString('en-GB')}
+                            <br />
+                            <span className="vip-status">{win.actualMatchStatusShort || 'FT'}</span>
+                          </div>
+                          <div className="vip-teams">
+                            <div className="vip-team">
+                              {win.homeTeamLogo ? (
+                                <img
+                                  src={win.homeTeamLogo}
+                                  alt={win.matchHomeTeamName}
+                                  className="team-logo"
+                                  loading="lazy"
+                                  onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Crect width="24" height="24" fill="%23e5e7eb"/%3E%3C/svg%3E';
+                                  }}
+                                />
+                              ) : (
+                                <span className="team-logo-placeholder"></span>
+                              )}
+                              <span>{win.matchHomeTeamName}</span>
+                            </div>
+                            <div className="vip-team">
+                              {win.awayTeamLogo ? (
+                                <img
+                                  src={win.awayTeamLogo}
+                                  alt={win.matchAwayTeamName}
+                                  className="team-logo"
+                                  loading="lazy"
+                                  onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Crect width="24" height="24" fill="%23e5e7eb"/%3E%3C/svg%3E';
+                                  }}
+                                />
+                              ) : (
+                                <span className="team-logo-placeholder"></span>
+                              )}
+                              <span>{win.matchAwayTeamName}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="results-cell">
+                        <div className="score">{win.finalHomeScore ?? '-'}</div>
+                        <div className="score">{win.finalAwayScore ?? '-'}</div>
+                      </td>
+                      <td className="tip-cell">
+                        <span className="vip-tip-badge tip-won">
+                          {shortenOddDescription(win.oddDescription)}
+                        </span>
+                      </td>
+                      <td className="league-cell">
+                        <div className="league-info">
+                          <span className="league-abbr">@{win.oddValue}</span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="5" className="no-data">No VIP wins available</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="free-tips-wins-container">

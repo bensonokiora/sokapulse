@@ -145,13 +145,13 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="nav-menu d-none d-lg-flex">
-              <Link href="/free-tips" className="nav-item">
+              <Link href="/" className="nav-item">
                 Free Tips
               </Link>
-              <Link href="/vip-tips" className="nav-item">
+              <Link href="/premium-soccer-betting-tips" className="nav-item">
                 VIP
               </Link>
-              <Link href="/vvip-tips" className="nav-item">
+              <Link href="/vvip-soccer-betting-tips" className="nav-item">
                 VVIP
               </Link>
               <Link href="/jackpot-predictions/sportpesa-mega-jackpot" className="nav-item">
@@ -228,13 +228,13 @@ export default function Navbar() {
           <div className="mobile-menu-body">
             {/* Menu Items */}
             <div className="mobile-menu-items">
-              <Link href="/free-tips" className="mobile-menu-item" onClick={() => { toggleMobileMenu(); }}>
+              <Link href="/" className="mobile-menu-item" onClick={() => { toggleMobileMenu(); }}>
                 Free Tips
               </Link>
-              <Link href="/vip-tips" className="mobile-menu-item" onClick={() => { toggleMobileMenu(); }}>
+              <Link href="/premium-soccer-betting-tips" className="mobile-menu-item" onClick={() => { toggleMobileMenu(); }}>
                 VIP
               </Link>
-              <Link href="/vvip-tips" className="mobile-menu-item" onClick={() => { toggleMobileMenu(); }}>
+              <Link href="/vvip-soccer-betting-tips" className="mobile-menu-item" onClick={() => { toggleMobileMenu(); }}>
                 VVIP
               </Link>
 

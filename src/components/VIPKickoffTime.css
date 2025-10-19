@@ -1,0 +1,60 @@
+.vip-kickoff-section {
+  margin: 1rem 0;
+}
+
+.vip-kickoff-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.vip-stats-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.vip-stat-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  transition: transform 0.3s ease;
+}
+
+.vip-stat-circle:hover {
+  transform: scale(1.1);
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .vip-stats-container {
+    gap: 0.75rem;
+  }
+
+  .vip-stat-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stat-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .vip-kickoff-title {
+    font-size: 1.125rem;
+  }
+}

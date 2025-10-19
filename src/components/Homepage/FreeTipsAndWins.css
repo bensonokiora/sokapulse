@@ -5,6 +5,10 @@
   margin: 2rem 0;
 }
 
+.free-tips-wins-container.single-column {
+  grid-template-columns: 1fr;
+}
+
 /* Section Styling */
 .tips-section,
 .vip-wins-section {

@@ -6,11 +6,17 @@ import Sidebar from './Sidebar';
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
 
-  // Hide sidebar on homepage
-  const isHomepage = pathname === '/';
+  // Hide sidebar on homepage, VIP, and VVIP pages
+  const noSidebarPages = [
+    '/',
+    '/premium-soccer-betting-tips',
+    '/vvip-soccer-betting-tips'
+  ];
 
-  if (isHomepage) {
-    // Homepage layout - no sidebar wrapper
+  const shouldHideSidebar = noSidebarPages.includes(pathname);
+
+  if (shouldHideSidebar) {
+    // Pages without sidebar - full width layout
     return <>{children}</>;
   }
 

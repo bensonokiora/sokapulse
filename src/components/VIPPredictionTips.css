@@ -1,0 +1,75 @@
+.vip-prediction-tips {
+  margin: 1.5rem 0;
+}
+
+.vip-tips-card {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+}
+
+.vip-tips-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vip-tips-title svg {
+  color: #fbbf24;
+}
+
+.vip-tips-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.vip-tips-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fbbf24;
+  color: #1f2937;
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+}
+
+.vip-tips-cta:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(251, 191, 36, 0.4);
+  color: #1f2937;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .vip-tips-card {
+    padding: 1.5rem;
+  }
+
+  .vip-tips-title {
+    font-size: 1.25rem;
+  }
+
+  .vip-tips-description {
+    font-size: 0.875rem;
+  }
+
+  .vip-tips-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
