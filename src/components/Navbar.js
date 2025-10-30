@@ -154,7 +154,7 @@ export default function Navbar() {
               <Link href="/vvip-soccer-betting-tips" className="nav-item">
                 VVIP
               </Link>
-              <Link href="/jackpot-predictions/sportpesa-mega-jackpot" className="nav-item">
+              <Link href="/free-sportpesa-mega-jackpot-predictions-and-analysis" className="nav-item">
                 Mega Jackpot
               </Link>
               <Link href="/jackpot-predictions/sportpesa-midweek-jackpot" className="nav-item">

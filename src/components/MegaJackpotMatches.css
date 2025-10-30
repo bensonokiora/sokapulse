@@ -1,0 +1,420 @@
+.mega-jackpot-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .mega-jackpot-section {
+  background: var(--card-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.mega-jackpot-header {
+  background: linear-gradient(135deg, #ffb400 0%, #ff9500 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mega-jackpot-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mega-jackpot-header-left h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.mega-jackpot-badge {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.25rem 0.625rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.mega-jackpot-table-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 100px 90px;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+[data-theme="dark"] .mega-jackpot-table-header {
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom-color: #374151;
+  color: #9ca3af;
+}
+
+.header-index {
+  text-align: center;
+}
+
+.header-teams {
+  text-align: left;
+  padding-left: 0.25rem;
+}
+
+.header-datetime {
+  text-align: left;
+}
+
+.header-tip {
+  text-align: center;
+}
+
+.mega-jackpot-matches-container {
+  padding: 0;
+}
+
+.mega-jackpot-match-card {
+  display: grid;
+  grid-template-columns: 40px 1fr 100px 90px;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+  background: white;
+}
+
+.mega-jackpot-match-card:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .mega-jackpot-match-card {
+  background: transparent;
+  border-bottom-color: #374151;
+}
+
+.mega-jackpot-match-card:hover {
+  background: #f9fafb;
+}
+
+[data-theme="dark"] .mega-jackpot-match-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.mega-jackpot-match-card.locked {
+  opacity: 0.85;
+}
+
+.match-index {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .match-index {
+  background: #374151;
+  color: #9ca3af;
+}
+
+.match-index.free {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+[data-theme="dark"] .match-index.free {
+  background: #4b5563;
+  color: #d1d5db;
+}
+
+.match-teams-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  min-width: 0;
+}
+
+.match-team-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.team-logo-placeholder {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .team-logo-placeholder {
+  background: #374151;
+}
+
+.team-logo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 2px;
+}
+
+.team-logo-placeholder svg {
+  width: 14px;
+  height: 14px;
+  color: #9ca3af;
+}
+
+.team-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.match-datetime-info {
+  display: flex;
+  align-items: center;
+  min-width: 80px;
+}
+
+.match-datetime-combined {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.match-date-text {
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.match-time-text {
+  font-size: 0.8125rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.match-prediction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prediction-badge {
+  background: #ffb400;
+  color: #000;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.prediction-locked {
+  background: #6b7280;
+  color: white;
+  padding: 0.375rem 0.625rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  min-width: 80px;
+}
+
+.prediction-locked svg {
+  width: 12px;
+  height: 12px;
+}
+
+.mega-jackpot-footer {
+  padding: 1rem 1.5rem;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+[data-theme="dark"] .mega-jackpot-footer {
+  background: rgba(0, 0, 0, 0.15);
+  border-top-color: #374151;
+}
+
+.unlock-premium-btn {
+  background: #000;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.unlock-premium-btn:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.no-predictions {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.no-predictions-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  color: #9ca3af;
+}
+
+.no-predictions p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .mega-jackpot-table-header {
+    grid-template-columns: 28px 1fr auto;
+    gap: 0.5rem;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .header-datetime {
+    display: none;
+  }
+
+  .mega-jackpot-match-card {
+    grid-template-columns: 28px 1fr auto;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .match-index {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8125rem;
+    align-self: flex-start;
+  }
+
+  .match-teams-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    grid-column: 2;
+  }
+
+  .match-team-row {
+    gap: 0.375rem;
+  }
+
+  .team-logo-placeholder {
+    width: 18px;
+    height: 18px;
+  }
+
+  .team-name {
+    font-size: 0.8125rem;
+  }
+
+  .match-datetime-info {
+    grid-column: 2;
+    margin-top: 0.25rem;
+    min-width: auto;
+  }
+
+  .match-datetime-combined {
+    flex-direction: row;
+    gap: 0.25rem;
+    font-size: 0.6875rem;
+  }
+
+  .match-date-text {
+    font-size: 0.6875rem;
+  }
+
+  .match-time-text {
+    font-size: 0.6875rem;
+    font-weight: 500;
+  }
+
+  .match-prediction {
+    grid-column: 3;
+    grid-row: 1;
+    justify-content: center;
+    align-self: center;
+    min-width: auto;
+  }
+
+  .prediction-badge {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    min-width: 45px;
+  }
+
+  .prediction-locked {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6875rem;
+    min-width: 60px;
+    gap: 0.25rem;
+  }
+
+  .prediction-locked svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .mega-jackpot-header {
+    padding: 0.875rem 1rem;
+  }
+
+  .mega-jackpot-header-left h2 {
+    font-size: 1.125rem;
+  }
+
+  .mega-jackpot-badge {
+    font-size: 0.75rem;
+    padding: 0.1875rem 0.5rem;
+  }
+
+  .mega-jackpot-footer {
+    padding: 0.875rem 1rem;
+  }
+
+  .unlock-premium-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}

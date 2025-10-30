@@ -6,11 +6,12 @@ import Sidebar from './Sidebar';
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
 
-  // Hide sidebar on homepage, VIP, and VVIP pages
+  // Hide sidebar on homepage, VIP, VVIP, and Mega Jackpot pages
   const noSidebarPages = [
     '/',
     '/premium-soccer-betting-tips',
-    '/vvip-soccer-betting-tips'
+    '/vvip-soccer-betting-tips',
+    '/free-sportpesa-mega-jackpot-predictions-and-analysis'
   ];
 
   const shouldHideSidebar = noSidebarPages.includes(pathname);
